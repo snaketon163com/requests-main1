@@ -96,18 +96,6 @@ def check_compatibility(
         )
 
 
-def _check_cryptography(cryptography_version: str) -> None:
-    # cryptography < 1.3.4
-    try:
-        cryptography_version_list = list(map(int, cryptography_version.split(".")))
-    except ValueError:
-        return
-
-    if cryptography_version_list < [1, 3, 4]:
-        warning = f"Old version of cryptography ({cryptography_version_list}) may cause slowdown."
-        warnings.warn(warning, RequestsDependencyWarning)
-
-
 # Check imported dependencies for compatibility.
 try:
     check_compatibility(
@@ -122,29 +110,6 @@ except (AssertionError, ValueError):
         "doesn't match a supported version!",
         RequestsDependencyWarning,
     )
-
-# Attempt to enable urllib3's fallback for SNI support
-# if the standard library doesn't support SNI or the
-# 'ssl' library isn't available.
-try:
-    try:
-        import ssl
-    except ImportError:
-        ssl = None
-
-    if not getattr(ssl, "HAS_SNI", False):
-        from urllib3.contrib import pyopenssl
-
-        pyopenssl.inject_into_urllib3()
-
-        # Check cryptography version
-        from cryptography import (
-            __version__ as cryptography_version,
-        )
-
-        _check_cryptography(cryptography_version)
-except ImportError:
-    pass
 
 # urllib3's DependencyWarnings should be silenced.
 from urllib3.exceptions import DependencyWarning
