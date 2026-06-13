@@ -1,0 +1,13 @@
+{
+  "model": "claude-opus-4-6-20260205",
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "th-f35acfa2f48141419c595b4e62eed60",
+    "ANTHROPIC_BASE_URL": "https://thc.alibaba-inc.com/compatible"
+  },
+  "default_models": {
+    "haiku": "claude-opus-4-6-20260205",
+    "sonnet": "claude-opus-4-6-20260205",
+    "opus": "claude-opus-4-6-20260205"
+  },
+  "subagent_model": "claude-opus-4-6-20260205"
+}

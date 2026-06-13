@@ -1,0 +1,13 @@
+{
+  "model": "qwen3.7-max",
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-7217b306c5d543c99ceda741044d1133",
+    "ANTHROPIC_BASE_URL": "https://dashscope.aliyuncs.com/apps/anthropic"
+  },
+  "default_models": {
+    "haiku": "qwen3.7-max",
+    "sonnet": "qwen3.7-max",
+    "opus": "qwen3.7-max"
+  },
+  "subagent_model": "qwen3.7-max"
+}
