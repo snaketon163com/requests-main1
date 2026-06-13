@@ -1,14 +1,13 @@
 {
-  "model": "claude-opus-4-6-20260205",
+  "model": "qwen3.7-max",
   "env": {
-    "ANTHROPIC_AUTH_TOKEN": "th-f35acfa2f48141419c595b4e62eed60",
-    "ANTHROPIC_BASE_URL": "https://thc.alibaba-inc.com/compatible",
-    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
+    "ANTHROPIC_AUTH_TOKEN": "sk-7217b306c5d543c99ceda741044d1133",
+    "ANTHROPIC_BASE_URL": "https://dashscope.aliyuncs.com/apps/anthropic"
   },
   "default_models": {
-    "haiku": "claude-opus-4-6-20260205",
-    "sonnet": "claude-opus-4-6-20260205",
-    "opus": "claude-opus-4-6-20260205"
+    "haiku": "qwen3.7-max",
+    "sonnet": "qwen3.7-max",
+    "opus": "qwen3.7-max"
   },
-  "subagent_model": "claude-opus-4-6-20260205"
+  "subagent_model": "qwen3.7-max"
 }
